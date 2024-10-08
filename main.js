@@ -209,9 +209,7 @@ async function generateResponse(question) {
         spinner.style.display = 'none';
     } catch (error) {
         console.log(error);
-        console.log(data);
-        // Hide the spinner in case of an error
-        let message = 'Stop asking about love'
+        let message = 'Some questions are not worth asking(This message is displaying because you may have searched for love)'
         createAnswerBubble(message)
         spinner.style.display = 'none';
     }
