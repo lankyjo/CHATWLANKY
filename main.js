@@ -211,6 +211,8 @@ async function generateResponse(question) {
         console.log(error);
         console.log(data);
         // Hide the spinner in case of an error
+        let message = 'Stop asking about love'
+        createAnswerBubble(message)
         spinner.style.display = 'none';
     }
 }
