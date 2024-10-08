@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/img/ai-outline-icons-simple-stock-illustration-stock-vector.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <title>LankyJO Project| Chat with Gemini</title>
+</head>
+<body>
+    <main class="main">
+        <div class="username screen active">
+            <div class="form">
+                <label for="uname">
+                    <h1>Please Enter your Display name for a personalized Experience!</h1>
+                </label>
+            <form action="" id="form">
+                <input type="text" id="uname">
+                <button type="submit" id="submit-button">Enter</button>
+            </form>
+            </div>
+        </div>
+        <div class="loader">
+                <h1>
+        loading lanky ai
+        <span><img src="assets/img/ai.png" class="image" alt=""></span>
+                </h1>
+        </div>
+        <div class="main-screen screen">
+            <div class="header">
+                <i class="ri-arrow-left-circle-line back" title="back"></i>
+                <div class="dark-light" title="light/dark">
+                    <i class="ri-moon-fill moon"></i>
+                    <i class="ri-sun-line sun toggle-dark-light"></i>                  
+                </div>
+
+                <h1 class="greetings">Welcome Joshua</h1>
+            </div>
+                <div class="chat-field chat-active">
+                    <!-- <div class="chat question">
+                        <p>What is Cash Out Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti nisi distinctio aliquid amet magni. Perferendis fugiat repudiandae deserunt impedit officiis, esse eaque quisquam sunt ipsum iure rem veniam repellat deleniti?</p>
+                    </div>
+                    <div class="chat answer">
+                        <p id="model-answer">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad necessitatibus fugiat eum enim labore libero placeat, nihil laborum pariatur sed inventore unde porro magni, omnis illum quibusdam cumque velit facilis.</p>
+                    </div>          -->
+                    <!-- <div class="loading-image">
+                        <img class="spin" src="assets/img/ai.png" alt="">
+                    </div>      -->
+                </div>
+            <div class="question-field">
+                <form action="" id="question">
+                    <input type="text" class="ask-input" placeholder="Ask something">
+                    <button type="submit" class="send"><i class="ri-send-plane-line plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html{
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    transition: background 1s;
+    scroll-behavior: smooth;
+}
+main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.screen{
+    display: none;
+}
+.screen.active{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 800px;
+    max-width: 80%;
+}
+.form input{
+    outline: none;
+    padding: 1rem;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0 2px var(--black) ;
+}
+.form h1{
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Press Start 2P", system-ui;
+    padding-inline: 10px;
+    line-height: 2rem;
+}
+.form button{
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.form button:hover{
+    background-color: rgba(0, 0, 0, 0.88);
+}
+.form button:active{
+    transform: scale(0.9);
+}
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.loader h1{
+    display: flex;
+    align-items: center;
+    font-family: "Press Start 2P", system-ui;
+    font-size: 16px;
+}
+.image{
+    width: 60px;
+    display: block;
+    animation: rotation 4s linear infinite;
+}
+
+
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.main-screen{
+    padding:1rem 2rem;
+    height: 100%;
+}
+
+.header .greetings{
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 0.2273rem + 6.3636vw, 5rem);
+    font-family: "Press Start 2P", system-ui;
+    text-align: center;
+    position: fixed;
+    word-spacing: -18px;
+    /* white-space: nowrap; */
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    text-transform: capitalize;
+    transform: translate(-50%, -50%);
+}
+.header i{
+    font-size: 2.5rem;
+    cursor: pointer;
+    /* font-weight: 100; */
+    transition: .3s;
+}
+.header i:active{
+    transform: scale(0.8);
+}
+
+.question-field{
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-inline: 1rem;
+    width: 100%;
+    z-index: 1000000;
+    max-width: 1100px;
+}
+#question{
+    display: flex;
+    border: 2px solid black;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 20px;
+    height: 60px;
+}
+
+.ask-input{
+    flex: 1;
+    border: none;
+    outline: none;
+    transition: .2s;
+    width: 100%;
+    height: 100%;
+    background: none;
+    padding: 1rem; 
+    font-size: 18px;
+}
+/* .ask-input:focus{
+    border: 1px solid black;
+} */
+.ask-input::placeholder{
+    color: rgba(0, 0, 0, 0.363);
+    font-size: 18px;
+}
+.question-field button{
+    padding: 1rem;
+    outline: none;
+    border: none;
+    color: white;
+    background: black;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#question button:hover .plane{
+    transform: translateX(-5px) rotate(40deg);
+    transform-origin: center;
+    transition: .3s;
+}
+.dark-light{
+    width: 2.5rem;
+    height: 2.5rem;
+    overflow: hidden;
+    /* background: transparent; */
+    border-radius: 50%;
+    position: relative;
+}
+.sun{
+    position: absolute;
+}
+.moon{
+    position: absolute;
+    transform: translateX(0%);
+}
+.toggle-dark-light{
+    transform: translateX(-100%);
+}
+.chat-field{
+    position: relative;
+    overflow-y: scroll;
+    height: 100%;
+    padding: 6rem 0 8rem;
+    z-index: 1;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow: hidden;
+    position: fixed;
+    padding: 1rem 2rem;
+    background: white;
+    transition: background 1s;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.chat-field::-webkit-scrollbar{
+    background: transparent;
+    width: 5px;
+    display: none;
+}
+.chat-field::-webkit-scrollbar-thumb{
+    background-color: #00000046;
+    border-radius: 2rem;
+}
+.chat{
+    /* max-width: max-content; */
+    width: clamp(18.75rem, 13.393rem + 26.786vw, 37.5rem);
+    padding: 1rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    z-index: 1;
+}
+.question{
+    margin-left: auto;
+    text-align: right;
+    border: 3px solid black;
+    width: max-content;
+    max-width: 300px;
+}
+.question p{
+    text-align: left;
+}
+.answer{
+    background: #000;
+    color: white;
+}
+.back{
+    cursor: pointer;
+}
+
+.loading-image img{
+    width: 100px;
+}
+.chat-active{
+    display: none;
+}
+.loading-image{
+    display: block;
+}
+.spin{
+    /* display: none; */
+    /* filter: invert(1); */
+    animation: rotation 4s linear infinite;
+}
+@media (max-width: 420px) {
+    .chat{
+        max-width: 300px;
+    }
+}
+@media (max-width: 372px) {
+    .chat{
+        max-width: 250px;
+    }
+}
+@media (max-width: 310px) {
+    .chat{
+        max-width: 200px;
+    }
+}
